@@ -1,0 +1,26 @@
+database.yml
+
+# Application tmp files
+/.bundle
+/coverage
+*.log
+/tmp/*
+
+# System tmp files
+.DS_Store
+.idea
+*.swp
+*.swo
+tags
+.tags
+dump.rdb
+
+# Support application configs
+/.rspec
+/.ruby-version
+/.ruby-gemset
+/.rvmrc
+/zeus.json
+/.watchr*
+/.pryrc
+/.env.local
