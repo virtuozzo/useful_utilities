@@ -1,3 +1,3 @@
 module Utils
-  VERSION = '1.0.0'
+  VERSION = '5.0.0'.freeze
 end
