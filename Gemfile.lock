@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    onapp-utils (0.0.1)
+    onapp-utils (5.0.0)
       activesupport (= 3.2.22)
 
 GEM
