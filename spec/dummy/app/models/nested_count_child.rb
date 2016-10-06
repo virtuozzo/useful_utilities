@@ -1,0 +1,2 @@
+class NestedCountChild < NestedCount
+end
