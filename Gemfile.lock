@@ -135,10 +135,13 @@ DEPENDENCIES
   factory_girl
   factory_girl_rails
   fuubar
-  mysql2 (= 0.3.14)
+  mysql2 (~> 0.3.14)
   onapp-utils!
   pry
   rails (= 3.2.22)
   rspec-its
   rspec-rails
   timecop
+
+BUNDLED WITH
+   1.12.5
