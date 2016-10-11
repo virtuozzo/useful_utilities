@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport', '3.2.22'
 
-  s.add_development_dependency 'mysql2', '0.3.14'
+  s.add_development_dependency 'mysql2', '~>0.3.14'
   s.add_development_dependency 'activerecord', '3.2.22'
   s.add_development_dependency 'timecop'
   s.add_development_dependency 'factory_girl'
