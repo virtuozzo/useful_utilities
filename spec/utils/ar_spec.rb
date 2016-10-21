@@ -57,25 +57,25 @@ describe Utils::AR, type: :helper do
       let(:resources_class) { Count }
 
       it 'putted scope' do
-        result = by_polymorphic(resources_class.scoped, :target, NestedCount.scoped).to_sql
+        result = by_polymorphic(resources_class.all, :target, NestedCount.all).to_sql
 
-        expect(result).to eq(resources_class.where(target_type: 'NestedCount', target_id: NestedCount.scoped).to_sql)
+        expect(result).to eq(resources_class.where(target_type: 'NestedCount', target_id: NestedCount.all).to_sql)
       end
 
       it 'putted record' do
-        result = by_polymorphic(resources_class.scoped, :target, create(:nested_count, id: 2)).to_sql
+        result = by_polymorphic(resources_class.all, :target, create(:nested_count, id: 2)).to_sql
 
         expect(result).to eq(resources_class.where(target_type: 'NestedCount', target_id: 2).to_sql)
       end
 
       it 'putted scope of polymorhic records' do
-        result = by_polymorphic(resources_class.scoped, :target, NestedCountChild.scoped).to_sql
+        result = by_polymorphic(resources_class.all, :target, NestedCountChild.all).to_sql
 
-        expect(result).to eq(resources_class.where(target_type: 'NestedCount', target_id: NestedCountChild.scoped).to_sql)
+        expect(result).to eq(resources_class.where(target_type: 'NestedCount', target_id: NestedCountChild.all).to_sql)
       end
 
       it 'putted polymorhic record' do
-        result = by_polymorphic(resources_class.scoped, :target, create(:nested_count_child, id: 3)).to_sql
+        result = by_polymorphic(resources_class.all, :target, create(:nested_count_child, id: 3)).to_sql
 
         expect(result).to eq(resources_class.where(target_type: 'NestedCount', target_id: 3).to_sql)
       end
@@ -90,7 +90,7 @@ describe Utils::AR, type: :helper do
 
   describe '.[]' do
     specify { expect(helper[NestedCountChild, :id]).to eq 'nested_counts.id' }
-    specify { expect(helper[Count.scoped, :name]).to eq('counts.name') }
+    specify { expect(helper[Count.all, :name]).to eq('counts.name') }
   end
 
   describe '.desc' do
