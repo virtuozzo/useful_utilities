@@ -18,7 +18,17 @@ module Utils
     TYPE_SUFFIX = '%s_type'
     ID_SUFFIX = '%s_id'
 
-    delegate :value_to_boolean, :value_to_integer, :value_to_decimal, to: :'ActiveRecord::ConnectionAdapters::Column'
+    def value_to_integer(value)
+      ActiveRecord::Type::Integer.new.type_cast_from_database(value)
+    end
+
+    def value_to_decimal(value)
+      ActiveRecord::Type::Decimal.new.type_cast_from_database(value)
+    end
+
+    def value_to_boolean(value)
+      ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
+    end
 
     def boolean_to_float(value)
       value ? 1.0 : 0.0

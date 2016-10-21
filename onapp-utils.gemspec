@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'activesupport', '3.2.22'
+  s.add_dependency 'activesupport', '~>4.2'
 
   s.add_development_dependency 'mysql2', '~>0.3.14'
-  s.add_development_dependency 'activerecord', '3.2.22'
+  s.add_development_dependency 'activerecord', '~>4.2'
   s.add_development_dependency 'timecop'
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'fuubar'
