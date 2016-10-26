@@ -19,14 +19,22 @@ module Utils
     ID_SUFFIX = '%s_id'
 
     def value_to_integer(value)
+      return 0 if value.nil?
+      return 0 if value == false
+      return 1 if value == true
+
       ActiveRecord::Type::Integer.new.type_cast_from_database(value)
     end
 
     def value_to_decimal(value)
+      return BigDecimal.new(0) if value.nil?
+
       ActiveRecord::Type::Decimal.new.type_cast_from_database(value)
     end
 
     def value_to_boolean(value)
+      return false if value.nil?
+
       ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
     end
 
@@ -40,7 +48,7 @@ module Utils
     end
 
     def nested_associations_validation(record, nested = false)
-      record.reflections.each do |name, reflection|
+      record.class.reflections.each do |name, reflection|
         next unless NESTED_ASSOCIATIONS.include?(reflection.macro)
 
         association_records = Array(record.association(name).target)
