@@ -10,4 +10,5 @@ module Utils
   require_relative 'utils/i18n'
   require_relative 'utils/hash'
   require_relative 'utils/yaml'
+  require_relative 'utils/redhat_release'
 end
