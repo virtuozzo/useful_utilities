@@ -17,32 +17,70 @@ describe Utils::Time do
     it { is_expected.to eq ::Time.new(2014, 1, 22, 20, 00, 0) }
   end
 
+  describe '.beginning_of_next_day' do
+    let(:late_hour) { described_class.beginning_of_next_day(::Time.new(2014, 1, 22, 23, 55)) }
+    let(:early_hour) { described_class.beginning_of_next_day(::Time.new(2014, 1, 22, 00, 55)) }
+    let(:next_day_midnight) { ::Time.new(2014, 1, 23, 00, 00, 00) }
+
+    specify { expect(late_hour).to eq next_day_midnight }
+    specify { expect(early_hour).to eq next_day_midnight }
+  end
+
   describe '.beginning_of_next_month' do
     subject { described_class.beginning_of_next_month(::Time.new(2014, 1, 22, 19, 55)) }
 
     it { is_expected.to eq ::Time.new(2014, 2, 1) }
   end
 
-  context '.each_hour_from' do
-    around do |example|
-      ::Timecop.freeze(build_time(18, 29)) { example.run }
+  describe '.each_hour_from' do
+    delegate :each_hour_from, to: :described_class
+
+    context 'without `till` argument' do
+      around { |example| ::Timecop.freeze(build_time(18, 29)) { example.run } }
+
+      it 'method yields with beginning of 2 hours' do
+        expect { |block| each_hour_from(build_time(16, 23), &block) }.
+          to yield_successive_args(
+            [build_time(16), build_time(17)],
+            [build_time(17), build_time(18)]
+          )
+      end
+
+      it 'a start date is equal to beginning of a current hour' do
+        expect { |block| described_class.each_hour_from(build_time(18, 12), &block) }.not_to yield_control
+      end
     end
 
-    it 'method yields with beginning of 2 hours' do
-      expect do |block|
-        described_class.each_hour_from(build_time(16, 23), &block)
-      end.to yield_successive_args(
-        [build_time(16), build_time(17)],
-        [build_time(17), build_time(18)]
-      )
-    end
-
-    it 'a start date is equal to beginning of a current hour' do
-      expect { |block| described_class.each_hour_from(build_time(18, 12), &block) }.to_not yield_control
+    context 'with `till` argument' do
+      it 'yields with beginning of 3 hours' do
+        expect { |block| each_hour_from(build_time(16, 23), build_time(18, 45), &block) }.
+          to yield_successive_args(
+            [build_time(16), build_time(17)],
+            [build_time(17), build_time(18)],
+            [build_time(18), build_time(19)]
+          )
+      end
     end
 
     def build_time(hours, minutes = 0)
-      ::Time.utc(2014, 2, 17, hours, minutes)
+      ::Time.new(2014, 2, 17, hours, minutes)
+    end
+  end
+
+  describe '.each_day_from' do
+    delegate :each_day_from, to: :described_class
+
+    it 'yields with beginning of 3 hours' do
+      expect { |block| each_day_from(build_time(16, 23), build_time(18, 01), &block) }.
+        to yield_successive_args(
+          [build_time(16), build_time(17)],
+          [build_time(17), build_time(18)],
+          [build_time(18), build_time(19)]
+        )
+    end
+
+    def build_time(date, hour = 0)
+      ::Time.new(2014, 2, date, hour, 0, 0)
     end
   end
 
