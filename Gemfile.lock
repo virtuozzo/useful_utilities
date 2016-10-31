@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    onapp-utils (5.2.0)
+    onapp-utils (5.2.1)
       activesupport (= 3.2.22)
 
 GEM
@@ -142,6 +142,3 @@ DEPENDENCIES
   rspec-its
   rspec-rails
   timecop
-
-BUNDLED WITH
-   1.12.5

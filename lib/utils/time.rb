@@ -5,6 +5,7 @@ module Utils
     extend self
 
     SECONDS_IN_HOUR = 3_600
+    MILLISECONDS_IN_SECOND = 1_000
 
     # Whatever time is passed it will return it without any GMT offset and the passed time will be in UTC
     # t = Time.now              #=> 2013-12-19 14:01:22 +0200
@@ -24,19 +25,35 @@ module Utils
       time.beginning_of_hour.in(1.hour)
     end
 
+    def beginning_of_next_day(time)
+      time.beginning_of_day.in(1.day)
+    end
+
     def beginning_of_next_month(time)
       time.beginning_of_month.in(1.month)
     end
 
-    # yields with utc time of each a hour beginning
+    # yields local time of the beginning of each hour
     # between start time & current time
-    def each_hour_from(start)
-      cursor = start.utc.beginning_of_hour
-      to = ::Time.now.utc.beginning_of_hour
-      while cursor < to
-        next_hour = beginning_of_next_hour(cursor)
-        yield cursor, next_hour
+    def each_hour_from(from, till = nil)
+      cursor = from.beginning_of_hour
+      till ||= ::Time.now.beginning_of_hour
+
+      while cursor < till
+        yield cursor, next_hour = beginning_of_next_hour(cursor)
+
         cursor = next_hour
+      end
+    end
+
+    def each_day_from(from, till = nil)
+      cursor = from.beginning_of_day
+      till ||= ::Time.now.beginning_of_day
+
+      while cursor < till
+        yield cursor, next_day = beginning_of_next_day(cursor)
+
+        cursor = next_day
       end
     end
 
@@ -58,7 +75,7 @@ module Utils
     end
 
     def to_milliseconds(time)
-      time.to_time.utc.to_i * 1_000
+      time.to_time.to_i * MILLISECONDS_IN_SECOND
     end
 
     # takes two objects: Time
