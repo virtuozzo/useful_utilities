@@ -2,6 +2,7 @@
 
 begin
   require 'bundler/setup'
+  require 'rubygems'
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
