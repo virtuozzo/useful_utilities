@@ -51,9 +51,10 @@ module Utils
       record.class.reflections.each do |name, reflection|
         next unless NESTED_ASSOCIATIONS.include?(reflection.macro)
 
-        association_records = Array(record.association(name).target)
+        association_records = Array(record.public_send(name))
         error_key = nested ? BASE_ERROR_KEY : name
         record.errors.delete(name)
+
         association_records.each do |nested_record|
           nested_associations_validation(nested_record, :nested)
           nested_record.errors.full_messages.each { |message| record.errors[error_key] << message }

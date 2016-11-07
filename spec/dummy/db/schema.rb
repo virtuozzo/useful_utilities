@@ -9,29 +9,29 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160518061012) do
+ActiveRecord::Schema.define(version: 20160518061012) do
 
-  create_table "counts", :force => true do |t|
-    t.integer  "i"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "counts", force: :cascade do |t|
+    t.integer  "i",          limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "deeper_nested_counts", :force => true do |t|
-    t.integer  "count_id",                       :null => false
-    t.integer  "nested_count_id",                :null => false
-    t.integer  "z",               :default => 0
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+  create_table "deeper_nested_counts", force: :cascade do |t|
+    t.integer  "count_id",        limit: 4,             null: false
+    t.integer  "nested_count_id", limit: 4,             null: false
+    t.integer  "z",               limit: 4, default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "nested_counts", :force => true do |t|
-    t.integer  "count_id",                  :null => false
-    t.integer  "y",          :default => 0
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+  create_table "nested_counts", force: :cascade do |t|
+    t.integer  "count_id",   limit: 4,             null: false
+    t.integer  "y",          limit: 4, default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

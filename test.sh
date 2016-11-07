@@ -1,12 +1,8 @@
 #!/bin/bash
 
-exit_code=0
-
 echo "*** Running onapp-utils specs"
-bundle install | grep Installing
-bundle exec rake app:db:drop app:db:create app:db:migrate app:db:test:prepare
-bundle exec rspec spec
 
-exit_code+=$?
-
-exit $exit_code
+bundle install                                      || exit 1
+bundle exec rake app:db:drop app:db:create          || exit 1
+bundle exec rake app:db:migrate app:db:test:prepare || exit 1
+bundle exec rspec spec                              || exit 1
