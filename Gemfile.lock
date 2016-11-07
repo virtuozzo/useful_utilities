@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     onapp-utils (5.2.3)
-      activesupport (= 3.2.22)
+      activesupport (< 5)
 
 GEM
   remote: https://rubygems.org/
