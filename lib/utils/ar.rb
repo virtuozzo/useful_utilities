@@ -56,6 +56,7 @@ module Utils
         record.errors.delete(name)
 
         association_records.each do |nested_record|
+          next unless nested_record.changed?
           nested_associations_validation(nested_record, :nested)
           nested_record.errors.full_messages.each { |message| record.errors[error_key] << message }
         end
