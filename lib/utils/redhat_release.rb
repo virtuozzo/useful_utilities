@@ -1,6 +1,5 @@
 module Utils
   class RedhatRelease
-    MAJOR_VERSION_5 = 5
     LEGACY_DISTRO_TEMPLATE = 'centos%{major_version}'.freeze
 
     VERSION_SEPARATOR = '.'.freeze # this may change to "dot" and "hyphen" if we allow not only final releases(beta, custom git builds, etc)
@@ -28,10 +27,6 @@ module Utils
 
     def self.major_version(*args)
       new(*args).major_version
-    end
-
-    def self.not_centos5?(ver)
-      MAJOR_VERSION_5 != ver
     end
 
     def self.legacy_distro(ver)

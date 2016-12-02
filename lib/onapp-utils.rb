@@ -11,4 +11,5 @@ module Utils
   require_relative 'utils/hash'
   require_relative 'utils/yaml'
   require_relative 'utils/redhat_release'
+  require_relative 'utils/centos_version'
 end
