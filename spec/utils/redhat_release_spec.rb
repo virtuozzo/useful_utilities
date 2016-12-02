@@ -3,22 +3,6 @@ require 'spec_helper'
 describe Utils::RedhatRelease do
   let(:service) { described_class.new(release_string) }
 
-  describe '.not_centos5?' do
-    subject { described_class.not_centos5?(major_version) }
-
-    context 'major_version == 5' do
-      let(:major_version) { 5 }
-
-      it { is_expected.to be false }
-    end
-
-    context 'release_string corresponds to major_version 7' do
-      let(:major_version) { 7 }
-
-      it { is_expected.to be true }
-    end
-  end
-
   describe '.legacy_distro' do
     let(:major_version) { 7 }
 
