@@ -119,6 +119,3 @@ DEPENDENCIES
   rspec-its
   rspec-rails
   timecop
-
-BUNDLED WITH
-   1.12.5
