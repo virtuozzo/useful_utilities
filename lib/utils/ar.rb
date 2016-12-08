@@ -18,7 +18,25 @@ module Utils
     TYPE_SUFFIX = '%s_type'
     ID_SUFFIX = '%s_id'
 
-    delegate :value_to_boolean, :value_to_integer, :value_to_decimal, to: :'ActiveRecord::ConnectionAdapters::Column'
+    def value_to_integer(value)
+      return 0 if value.nil?
+      return 0 if value == false
+      return 1 if value == true
+
+      ActiveRecord::Type::Integer.new.type_cast_from_database(value)
+    end
+
+    def value_to_decimal(value)
+      return BigDecimal.new(0) if value.nil?
+
+      ActiveRecord::Type::Decimal.new.type_cast_from_database(value)
+    end
+
+    def value_to_boolean(value)
+      return false if value.nil?
+
+      ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
+    end
 
     def boolean_to_float(value)
       value ? 1.0 : 0.0
@@ -30,13 +48,15 @@ module Utils
     end
 
     def nested_associations_validation(record, nested = false)
-      record.reflections.each do |name, reflection|
+      record.class.reflections.each do |name, reflection|
         next unless NESTED_ASSOCIATIONS.include?(reflection.macro)
 
-        association_records = Array(record.association(name).target)
+        association_records = Array(record.public_send(name))
         error_key = nested ? BASE_ERROR_KEY : name
         record.errors.delete(name)
+
         association_records.each do |nested_record|
+          next unless nested_record.changed?
           nested_associations_validation(nested_record, :nested)
           nested_record.errors.full_messages.each { |message| record.errors[error_key] << message }
         end

@@ -1,4 +1,4 @@
-$:.push File.expand_path('../lib', __FILE__)
+$:.push File.expand_path('lib', __dir__)
 
 require 'utils/version'
 
@@ -12,10 +12,8 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'activesupport', '3.2.22'
+  s.add_dependency 'activesupport', '< 5'
 
-  s.add_development_dependency 'mysql2', '~>0.3.14'
-  s.add_development_dependency 'activerecord', '3.2.22'
   s.add_development_dependency 'timecop'
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'fuubar'
