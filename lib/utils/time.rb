@@ -35,22 +35,22 @@ module Utils
 
     # yields local time of the beginning of each hour
     # between start time & current time
-    def each_hour_from(from, till = nil)
-      cursor = from.beginning_of_hour
-      till ||= ::Time.now.beginning_of_hour
+    def each_hour_from(from, till = ::Time.now)
+      cursor = from.dup.utc.beginning_of_hour
+      end_time = till.dup.utc.beginning_of_hour
 
-      while cursor < till
+      while cursor < end_time
         yield cursor, next_hour = beginning_of_next_hour(cursor)
 
         cursor = next_hour
       end
     end
 
-    def each_day_from(from, till = nil)
+    def each_day_from(from, till = ::Time.now)
       cursor = from.beginning_of_day
-      till ||= ::Time.now.beginning_of_day
+      end_time = till.beginning_of_day
 
-      while cursor < till
+      while cursor < end_time
         yield cursor, next_day = beginning_of_next_day(cursor)
 
         cursor = next_day
