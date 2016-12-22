@@ -38,7 +38,7 @@ describe Utils::Time do
     context 'without `till` argument' do
       around { |example| ::Timecop.freeze(build_time(18, 29)) { example.run } }
 
-      it 'method yields with beginning of 2 hours' do
+      it 'yields with the beginnings of 2 hours' do
         expect { |block| each_hour_from(build_time(16, 23), &block) }.
           to yield_successive_args(
             [build_time(16), build_time(17)],
@@ -52,13 +52,60 @@ describe Utils::Time do
     end
 
     context 'with `till` argument' do
-      it 'yields with beginning of 3 hours' do
+      it 'yields with the beginnings of 2 hours (does not exceed the current time)' do
         expect { |block| each_hour_from(build_time(16, 23), build_time(18, 45), &block) }.
           to yield_successive_args(
             [build_time(16), build_time(17)],
             [build_time(17), build_time(18)],
-            [build_time(18), build_time(19)]
           )
+      end
+    end
+
+    context 'Indian timezone' do
+      let(:zone) { ActiveSupport::TimeZone.new('Kolkata') }
+
+      context 'start time is in local zone' do
+        specify do
+          expect { |block| each_hour_from(build_time(16, 23).in_time_zone(zone),
+                                          build_time(18, 45).in_time_zone(zone),
+                                          &block) }.
+            to yield_successive_args(
+              [build_time(16), build_time(17)],
+              [build_time(17), build_time(18)],
+            )
+        end
+      end
+
+      context 'start time is UTC' do
+        specify do
+          expect { |block| each_hour_from(build_time(16, 23).utc,
+                                          build_time(18, 45).in_time_zone(zone),
+                                          &block) }.
+            to yield_successive_args(
+              [build_time(16), build_time(17)],
+              [build_time(17), build_time(18)],
+            )
+        end
+
+        specify do
+          expect { |block| each_hour_from(build_time(16, 35).utc.beginning_of_hour,
+                                          build_time(18, 20).in_time_zone(zone),
+                                          &block) }.
+            to yield_successive_args(
+              [build_time(16), build_time(17)],
+              [build_time(17), build_time(18)],
+            )
+        end
+
+        specify do
+          expect { |block| each_hour_from(build_time(16, 25).utc.beginning_of_hour,
+                                          build_time(18, 20).in_time_zone(zone),
+                                          &block) }.
+            to yield_successive_args(
+              [build_time(16), build_time(17)],
+              [build_time(17), build_time(18)],
+            )
+        end
       end
     end
 
@@ -70,12 +117,11 @@ describe Utils::Time do
   describe '.each_day_from' do
     delegate :each_day_from, to: :described_class
 
-    it 'yields with beginning of 3 hours' do
+    it 'yields with the beginnings of 2 days' do
       expect { |block| each_day_from(build_time(16, 23), build_time(18, 01), &block) }.
         to yield_successive_args(
           [build_time(16), build_time(17)],
           [build_time(17), build_time(18)],
-          [build_time(18), build_time(19)]
         )
     end
 
@@ -97,6 +143,29 @@ describe Utils::Time do
 
       it 'returns diff as positive number' do
         is_expected.to eq 24
+      end
+    end
+  end
+
+  describe '.to_milliseconds' do
+    let(:expected_time) { Time.utc(2016, 1, 1, 20, 40, 55) }
+    let(:time) { expected_time.in_time_zone(zone) }
+
+    delegate :to_milliseconds, to: :described_class
+
+    context 'Hawaii timezone' do
+      let(:zone) { ActiveSupport::TimeZone.new('Hawaii') }
+
+      it 'does not depend on timezone' do
+        expect(to_milliseconds(time)).to eq to_milliseconds(expected_time)
+      end
+    end
+
+    context 'Kolkata timezone' do
+      let(:zone) { ActiveSupport::TimeZone.new('Kolkata') }
+
+      it 'does not depend on timezone' do
+        expect(to_milliseconds(time)).to eq to_milliseconds(expected_time)
       end
     end
   end
