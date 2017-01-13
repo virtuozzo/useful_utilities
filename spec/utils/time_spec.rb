@@ -169,4 +169,28 @@ describe Utils::Time do
       end
     end
   end
+
+  describe '.valid_date?' do
+    delegate :valid_date?, to: :described_class
+
+    it 'returns true for 2017-10-11' do
+      expect(valid_date?('2017-10-11')).to be true
+    end
+
+    it 'returns false for malformed date' do
+      expect(valid_date?('2017-10-111')).to be false
+    end
+
+    it 'returns false for nil' do
+      expect(valid_date?(nil)).to be false
+    end
+
+    it 'returns true if Date is an input' do
+      expect(valid_date?(Date.new)).to be true
+    end
+
+    it 'return false for empty string' do
+      expect(valid_date?('')).to be false
+    end
+  end
 end
