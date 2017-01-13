@@ -82,5 +82,16 @@ module Utils
     def diff_in_hours(end_time, start_time)
       ((end_time.to_i - start_time.to_i) / SECONDS_IN_HOUR).abs
     end
+
+    def valid_date?(date)
+      return true if date.acts_like?(:date)
+      return false if date.blank?
+
+      # http://stackoverflow.com/a/35502357/717336
+      date_hash = Date._parse(date.to_s)
+      Date.valid_date?(date_hash[:year].to_i,
+                       date_hash[:mon].to_i,
+                       date_hash[:mday].to_i)
+    end
   end
 end
