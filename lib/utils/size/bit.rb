@@ -1,73 +1,43 @@
+require_relative 'standard/decimal'
+
 module Utils
   module Size
     module Bit
-      KILOBIT = 1_000.freeze
-      MEGABIT = 1_000_000.freeze
-      GIGABIT = 1_000_000_000.freeze
-      TERABIT = 1_000_000_000_000.freeze
-
-      # @note: used JEDEC standarts http://en.wikipedia.org/wiki/Binary_prefix
+      # @note: used SI standard http://en.wikipedia.org/wiki/Binary_prefix
       #   Decimal
-      #   1 kbit = 1000 bit
+      #   1 K = 1000
+      include Utils::Size::Standard::Decimal
+
       def to_terabits(size, unit)
-        if    unit == :bit  then size.fdiv(TERABIT)
-        elsif unit == :kbit then size.fdiv(GIGABIT)
-        elsif unit == :Mbit then size.fdiv(MEGABIT)
-        elsif unit == :Gbit then size.fdiv(KILOBIT)
-        elsif unit == :Tbit then size
-        else  unsupported_unit!(unit)
-        end
+        to_tera(size, bit_prefix(unit))
       end
 
       def to_gigabits(size, unit)
-        if    unit == :bit  then size.fdiv(GIGABIT)
-        elsif unit == :kbit then size.fdiv(MEGABIT)
-        elsif unit == :Mbit then size.fdiv(KILOBIT)
-        elsif unit == :Gbit then size
-        elsif unit == :Tbit then size * KILOBIT
-        else  unsupported_unit!(unit)
-        end
+        to_giga(size, bit_prefix(unit))
       end
 
       def to_megabits(size, unit)
-        if    unit == :bit then size.fdiv(MEGABIT)
-        elsif unit == :kbit then size.fdiv(KILOBIT)
-        elsif unit == :Gbit then size * KILOBIT
-        elsif unit == :Mbit then size
-        elsif unit == :Tbit then size * MEGABIT
-        else  unsupported_unit!(unit)
-        end
+        to_mega(size, bit_prefix(unit))
       end
 
       def to_kilobits(size, unit)
-        if    unit == :bit  then size.fdiv(KILOBIT)
-        elsif unit == :kbit then size
-        elsif unit == :Mbit then size * KILOBIT
-        elsif unit == :Gbit then size * MEGABIT
-        elsif unit == :Tbit then size * GIGABIT
-        else  unsupported_unit!(unit)
-        end
+        to_kilo(size, bit_prefix(unit))
       end
 
       def to_bits(size, unit)
-        if    unit == :bit  then size
-        elsif unit == :kbit then size * KILOBIT
-        elsif unit == :Mbit then size * MEGABIT
-        elsif unit == :Gbit then size * GIGABIT
-        elsif unit == :Tbit then size * TERABIT
-        else unsupported_unit!(unit)
-        end
+        to_decimal_bi(size, bit_prefix(unit))
       end
 
       # Convert bits to manually defined format
       #   by using parameter 'unit'
       #   ATTENTION: by default round is eq to 3 digits
       def bits_to_human_size(size, unit, rounder = 3)
-        if    unit == :bit  then size.round(rounder)
-        elsif unit == :kbit then to_kilobits(size, :bit).round(rounder)
-        elsif unit == :Mbit then to_megabits(size, :bit).round(rounder)
-        elsif unit == :Gbit then to_gigabits(size, :bit).round(rounder)
-        elsif unit == :Tbit then to_terabits(size, :bit).round(rounder)
+        case unit
+        when :bit  then size.round(rounder)
+        when :kbit then to_kilobits(size, :bit).round(rounder)
+        when :Mbit then to_megabits(size, :bit).round(rounder)
+        when :Gbit then to_gigabits(size, :bit).round(rounder)
+        when :Tbit then to_terabits(size, :bit).round(rounder)
         else  unsupported_unit!(unit)
         end
       end
@@ -94,6 +64,17 @@ module Utils
       end
 
       private
+
+      def bit_prefix(unit)
+        case unit
+        when :bit  then :B
+        when :kbit then :KB
+        when :Mbit then :MB
+        when :Gbit then :GB
+        when :Tbit then :TB
+        else unsupported_unit!(unit)
+        end
+      end
 
       def unsupported_unit!(unit)
         raise ArgumentError.new("Unsupported unit - #{ unit }")
