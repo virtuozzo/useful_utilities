@@ -3,7 +3,7 @@ class CreateCounts < ActiveRecord::Migration
     create_table :counts do |t|
       t.integer :i
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
