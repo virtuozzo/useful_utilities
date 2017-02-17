@@ -2,28 +2,28 @@ require_relative 'standard/decimal'
 
 module Utils
   module Size
-    module CdnByte
+    module CdnSpeed
       # @note: used SI standard http://en.wikipedia.org/wiki/Binary_prefix
       #   Decimal
       #   1 K = 1000
       include Utils::Size::Standard::Decimal
 
-      THOUSAND = 1_000
-
-      def to_cdn_gigabytes(size, unit)
-        #TODO check if it still in use
-        if unit == :Mbit
-          return size.fdiv(THOUSAND)/8
-        end
-
-        to_giga(size, unit)
-      end
-
-      def to_cdn_bytes(size, unit)
-        to_decimal_bi(size, unit)
+      def to_cdn_gbps(speed, unit)
+        to_giga(speed, bit_prefix(unit))/8
       end
 
       private
+
+      def bit_prefix(unit)
+        case unit
+        when :bit  then :B
+        when :kbit then :KB
+        when :Mbit then :MB
+        when :Gbit then :GB
+        when :Tbit then :TB
+        else unsupported_unit!(unit)
+        end
+      end
 
       def unsupported_unit!(unit)
         raise ArgumentError.new("Unsupported unit - #{ unit }")
