@@ -1,10 +1,9 @@
-database.yml
-
 # Application tmp files
 /.bundle
 /coverage
 *.log
 /tmp/*
+*.sqlite3
 
 # System tmp files
 .DS_Store

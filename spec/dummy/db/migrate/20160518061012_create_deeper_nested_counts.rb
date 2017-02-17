@@ -4,7 +4,8 @@ class CreateDeeperNestedCounts < ActiveRecord::Migration
       t.integer :count_id, null: false
       t.integer :nested_count_id, null: false
       t.integer :z, default: 0
-      t.timestamps
+
+      t.timestamps null: false
     end
   end
 end

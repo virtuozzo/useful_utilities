@@ -14,24 +14,24 @@
 ActiveRecord::Schema.define(version: 20160518061012) do
 
   create_table "counts", force: :cascade do |t|
-    t.integer  "i",          limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "i"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "deeper_nested_counts", force: :cascade do |t|
-    t.integer  "count_id",        limit: 4,             null: false
-    t.integer  "nested_count_id", limit: 4,             null: false
-    t.integer  "z",               limit: 4, default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "count_id",                    null: false
+    t.integer  "nested_count_id",             null: false
+    t.integer  "z",               default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "nested_counts", force: :cascade do |t|
-    t.integer  "count_id",   limit: 4,             null: false
-    t.integer  "y",          limit: 4, default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "count_id",               null: false
+    t.integer  "y",          default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
