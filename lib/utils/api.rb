@@ -1,3 +1,6 @@
+require 'socket'
+require 'timeout'
+
 module Utils
   module Api
     extend self
