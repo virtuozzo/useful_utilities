@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'activesupport', '< 5'
+  s.add_dependency 'activesupport'
 
   s.add_development_dependency 'timecop'
   s.add_development_dependency 'factory_girl'
