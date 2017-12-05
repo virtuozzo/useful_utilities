@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    onapp-utils (5.4.3)
+    onapp-utils (5.4.4)
       activesupport (< 5)
 
 GEM
@@ -119,3 +119,6 @@ DEPENDENCIES
   rspec-rails
   sqlite3
   timecop
+
+BUNDLED WITH
+   1.13.7
