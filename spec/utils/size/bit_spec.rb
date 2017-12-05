@@ -57,12 +57,14 @@ describe Utils::Size::Bit do
   end
 
   context 'suitable_unit_for_bits' do
-    specify { expect(suitable_unit_for_bits(100)).to              eq :bit  }
-    specify { expect(suitable_unit_for_bits(1000)).to             eq :kbit  }
-    specify { expect(suitable_unit_for_bits(1000000)).to          eq :Mbit  }
-    specify { expect(suitable_unit_for_bits(1000000000)).to       eq :Gbit  }
-    specify { expect(suitable_unit_for_bits(1000000000000)).to    eq :Tbit  }
-    specify { expect(suitable_unit_for_bits(1000000000000000)).to eq :Tbit  }
+    specify { expect(suitable_unit_for_bits(100)).to               eq :bit  }
+    specify { expect(suitable_unit_for_bits(1_000)).to             eq :kbit }
+    specify { expect(suitable_unit_for_bits(100_000)).to           eq :kbit }
+    specify { expect(suitable_unit_for_bits(1_000_000)).to         eq :Mbit }
+    specify { expect(suitable_unit_for_bits(100_000_000)).to       eq :Mbit }
+    specify { expect(suitable_unit_for_bits(1_000_000_000)).to     eq :Gbit }
+    specify { expect(suitable_unit_for_bits(100_000_000_000)).to   eq :Gbit }
+    specify { expect(suitable_unit_for_bits(1_000_000_000_000)).to eq :Tbit }
     specify { expect { suitable_unit_for_bits(-1) }.to  raise_error(ArgumentError) }
     specify { expect { suitable_unit_for_bits(1.0) }.to raise_error(ArgumentError) }
   end

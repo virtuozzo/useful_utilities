@@ -48,10 +48,10 @@ module Utils
         return not_integer!(value)          unless value.is_a?(Integer)
         return not_positive_integer!(value) unless value > -1
 
-        if value.to_s.length    <= 3 then :bit
-        elsif value.to_s.length < 6  then :kbit
-        elsif value.to_s.length < 9  then :Mbit
-        elsif value.to_s.length < 12 then :Gbit
+        if value.to_s.length    <= 3  then :bit
+        elsif value.to_s.length <= 6  then :kbit
+        elsif value.to_s.length <= 9  then :Mbit
+        elsif value.to_s.length <= 12 then :Gbit
         else :Tbit
         end
       end
