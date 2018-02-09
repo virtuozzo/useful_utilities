@@ -1,0 +1,15 @@
+require 'active_support'
+
+module UsefulUtilities
+  require 'useful_utilities/version'
+  require_relative 'useful_utilities/ar' if defined?(ActiveRecord)
+  require_relative 'useful_utilities/numeric'
+  require_relative 'useful_utilities/time'
+  require_relative 'useful_utilities/size'
+  require_relative 'useful_utilities/api'
+  require_relative 'useful_utilities/i18n'
+  require_relative 'useful_utilities/hash'
+  require_relative 'useful_utilities/yaml'
+  require_relative 'useful_utilities/redhat_release'
+  require_relative 'useful_utilities/centos_version'
+end

@@ -1,5 +1,5 @@
 class NestedCount < ActiveRecord::Base
-  extend ::Utils::AR::Methods
+  extend ::UsefulUtilities::AR::Methods
 
   belongs_to :count
 

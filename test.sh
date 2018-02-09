@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "*** Running onapp-utils specs"
+echo "*** Running useful_utilities specs"
 
 bundle install                                      || exit 1
 bundle exec rake app:db:drop app:db:create          || exit 1

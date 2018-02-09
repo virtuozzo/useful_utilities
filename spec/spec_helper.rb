@@ -3,7 +3,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../dummy/config/environment', __FILE__)
 
 require 'active_record'
-require 'onapp-utils'
+require 'useful_utilities'
 require 'rspec/rails'
 require 'pry'
 require 'factory_girl_rails'

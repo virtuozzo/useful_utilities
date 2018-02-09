@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    onapp-utils (5.4.5)
+    useful_utilities (5.4.5)
       activesupport
 
 GEM
@@ -113,9 +113,9 @@ DEPENDENCIES
   factory_girl
   factory_girl_rails
   fuubar
-  onapp-utils!
   pry
   rspec-its
   rspec-rails
   sqlite3
   timecop
+  useful_utilities!
