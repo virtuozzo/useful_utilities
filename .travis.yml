@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.0.0
+cache: bundler
+script:
+  - bundle exec rake app:db:create
+  - bundle exec rake app:db:migrate app:db:test:prepare
+  - bundle exec rspec spec

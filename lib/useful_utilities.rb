@@ -1,7 +1,7 @@
 require 'active_support'
 
 module UsefulUtilities
-  require 'useful_utilities/version'
+  require_relative 'useful_utilities/version'
   require_relative 'useful_utilities/ar' if defined?(ActiveRecord)
   require_relative 'useful_utilities/numeric'
   require_relative 'useful_utilities/time'

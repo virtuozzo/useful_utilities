@@ -1,16 +1,14 @@
-### Gem 'utils'
+## UsefulUtilities
 
-a collection of all utils provided in separate namespace
+A collection of useful utilities
 
 This package include next tools with new namespaces:
 
-ApiUsefulUtilities => UsefulUtilities::Api
-ARUsefulUtilities => UsefulUtilities::AR
-HashUsefulUtilities => UsefulUtilities::Hash
-SizeUsefulUtilities => UsefulUtilities::Size
-NumericUsefulUtilities => UsefulUtilities::Numeric
-TimeUsefulUtilities => UsefulUtilities::Time
-YAMLUsefulUtilities => UsefulUtilities::YAML
-I18nUsefulUtilities => UsefulUtilities::I18n
-
-`test.sh` runs all test.
+Api Utilities => UsefulUtilities::Api
+AR Utilities => UsefulUtilities::AR
+Hash Utilities => UsefulUtilities::Hash
+Size Utilities => UsefulUtilities::Size
+Numeric Utilities => UsefulUtilities::Numeric
+Time Utilities => UsefulUtilities::Time
+YAML Utilities => UsefulUtilities::YAML
+I18n Utilities => UsefulUtilities::I18n

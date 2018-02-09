@@ -83,6 +83,7 @@ module UsefulUtilities
       def not_integer!(value)
         raise ArgumentError.new("#{value } is not integer")
       end
+
       def not_positive_integer!(value)
         raise ArgumentError.new("#{value } is not positive integer")
       end
