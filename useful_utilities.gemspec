@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary = 'Helpful methods for time, sizes, hashes etc.'
   s.license = 'Apache 2.0'
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.md']
-  s.required_ruby_version = '>= 2.0'
+  s.required_ruby_version = '>= 2.1.0'
 
   s.description = <<-EOF
     A bunch of useful modules to work with time/size constants/hashes
