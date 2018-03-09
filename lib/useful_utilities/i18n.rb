@@ -1,7 +1,10 @@
 module UsefulUtilities
+  # I18n utilities
   module I18n
     extend self
 
+    # @param object [Object]
+    # @return [String] humanized name
     def humanize_type(object)
       klass = case object
               when Class then object

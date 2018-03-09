@@ -1,5 +1,5 @@
-# It was used in outdated rake task, but we decided to leave for the future
 module UsefulUtilities
+  # YAML utilities
   module YAML
     extend self
 

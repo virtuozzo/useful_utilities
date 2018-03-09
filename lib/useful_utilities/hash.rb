@@ -1,4 +1,5 @@
 module UsefulUtilities
+  # Hash utilities
   module Hash
     extend self
 

@@ -10,8 +10,9 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/OnApp/useful_utilities'
   s.summary = 'Helpful methods for time, sizes, hashes etc.'
   s.license = 'Apache 2.0'
-  s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.md']
+  s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.md, LICENSE']
   s.required_ruby_version = '>= 2.1.0'
+  s.has_rdoc = 'yard'
 
   s.description = <<-EOF
     A bunch of useful modules to work with time/size constants/hashes

@@ -2,13 +2,36 @@
 
 A collection of useful utilities
 
-This package include next tools with new namespaces:
+## Installation
+Add the following code to your Gemfile
 
-Api Utilities => UsefulUtilities::Api
-AR Utilities => UsefulUtilities::AR
-Hash Utilities => UsefulUtilities::Hash
-Size Utilities => UsefulUtilities::Size
-Numeric Utilities => UsefulUtilities::Numeric
-Time Utilities => UsefulUtilities::Time
-YAML Utilities => UsefulUtilities::YAML
-I18n Utilities => UsefulUtilities::I18n
+```ruby
+  gem 'useful_utilities'
+```
+And run `bundle install`. Gem is ready to use!
+
+## List of utilities
+
+`UsefulUtilities::AR` - extensions for ActiveRecord
+
+`UsefulUtilities::Api` - some useful methods for API
+
+`UsefulUtilities::Hash` - useful hash methods
+
+`UsefulUtilities::Time` - time conversions, etc
+
+`UsefulUtilities::Size` - size/frequency conversions
+
+See more in Documentation
+
+## Documentation
+
+Documentation and code samples are available [here](http://www.rubydoc.info/gems/useful_utilities/)
+
+## License
+
+See `LICENSE` file
+
+## Contibuting
+
+Bug reports and pull requests are welcome
