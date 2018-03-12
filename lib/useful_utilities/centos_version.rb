@@ -1,4 +1,5 @@
 module UsefulUtilities
+  # CentOS versions utilities
   class CentOSVersion
     attr_reader :version
 

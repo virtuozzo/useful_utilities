@@ -1,14 +1,23 @@
 module UsefulUtilities
   module Size
     module Standard
+      # Possible prefixes:
+      #   :B   - bytes
+      #   :KiB - kibibytes
+      #   :MiB - mebibytes
+      #   :GiB - gibibytes
+      #   :TiB - tebibytes
+      # Used ISO standard http://en.wikipedia.org/wiki/Binary_prefix
       module Binary
-        # @note: used ISO standard http://en.wikipedia.org/wiki/Binary_prefix
 
         KIBI = 1024      # KiB
         MEBI = KIBI ** 2 # MiB
         GIBI = KIBI ** 3 # GiB
         TEBI = KIBI ** 4 # TiB
 
+        # @param val [Numeric]
+        # @param prefix [Symbol]
+        # @return [Numeric] val in tebibytes
         def to_tebi(val, prefix)
           case prefix
           when :B   then val.fdiv(TEBI)
@@ -20,6 +29,9 @@ module UsefulUtilities
           end
         end
 
+        # @param val [Numeric]
+        # @param prefix [Symbol]
+        # @return [Numeric] val in gibibytes
         def to_gibi(val, prefix)
           case prefix
           when :B   then val.fdiv(GIBI)
@@ -31,6 +43,9 @@ module UsefulUtilities
           end
         end
 
+        # @param val [Numeric]
+        # @param prefix [Symbol]
+        # @return [Numeric] val in mebibytes
         def to_mebi(val, prefix)
           case prefix
           when :B   then val.fdiv(MEBI)
@@ -42,6 +57,9 @@ module UsefulUtilities
           end
         end
 
+        # @param val [Numeric]
+        # @param prefix [Symbol]
+        # @return [Numeric] val in kibibytes
         def to_kibi(val, prefix)
           case prefix
           when :B   then val.fdiv(KIBI)
@@ -53,6 +71,9 @@ module UsefulUtilities
           end
         end
 
+        # @param val [Numeric]
+        # @param prefix [Symbol]
+        # @return [Numeric] val in bytes
         def to_binary_bi(val, prefix)
           case prefix
           when :B   then val

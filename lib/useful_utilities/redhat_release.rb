@@ -1,4 +1,5 @@
 module UsefulUtilities
+  # Redhat releases utilities
   class RedhatRelease
     LEGACY_DISTRO_TEMPLATE = 'centos%{major_version}'.freeze
 

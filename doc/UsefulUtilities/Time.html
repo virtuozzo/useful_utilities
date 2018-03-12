@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: UsefulUtilities::Time
+  
+    &mdash; Documentation by YARD 0.9.12
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "UsefulUtilities::Time";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span>
+     &raquo; 
+    <span class="title">Time</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: UsefulUtilities::Time
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  <dl>
+      <dt>Extended by:</dt>
+      <dd><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></dd>
+  </dl>
+  
+  
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/useful_utilities/time.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>OnApp Ltd.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+  <h2>Constant Summary</h2>
+  <dl class="constants">
+    
+      <dt id="SECONDS_IN_HOUR-constant" class="">SECONDS_IN_HOUR =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>3_600</span></pre></dd>
+    
+      <dt id="MILLISECONDS_IN_SECOND-constant" class="">MILLISECONDS_IN_SECOND =
+        
+      </dt>
+      <dd><pre class="code"><span class='int'>1_000</span></pre></dd>
+    
+  </dl>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assume_utc-instance_method" title="#assume_utc (instance method)">#<strong>assume_utc</strong>(time)  &#x21d2; DateTime </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Time in UTC.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#beginning_of_next_day-instance_method" title="#beginning_of_next_day (instance method)">#<strong>beginning_of_next_day</strong>(time)  &#x21d2; Time </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Beginning of the next day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#beginning_of_next_hour-instance_method" title="#beginning_of_next_hour (instance method)">#<strong>beginning_of_next_hour</strong>(time)  &#x21d2; Time </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Beginning of the next hour.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#beginning_of_next_month-instance_method" title="#beginning_of_next_month (instance method)">#<strong>beginning_of_next_month</strong>(time)  &#x21d2; Time </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Beginning of the next month.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#diff_in_hours-instance_method" title="#diff_in_hours (instance method)">#<strong>diff_in_hours</strong>(end_time, start_time)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Difference in hours.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_day_from-instance_method" title="#each_day_from (instance method)">#<strong>each_day_from</strong>(from, till = ::Time.now)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Yields local time of the beginning of each day between from &amp; till.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_hour_from-instance_method" title="#each_hour_from (instance method)">#<strong>each_hour_from</strong>(from, till = ::Time.now)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Yields local time of the beginning of each hour between from &amp; till.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#round_to_hours-instance_method" title="#round_to_hours (instance method)">#<strong>round_to_hours</strong>(time)  &#x21d2; Time </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Time rounded to hours.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_milliseconds-instance_method" title="#to_milliseconds (instance method)">#<strong>to_milliseconds</strong>(time)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Time in milliseconds.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_utc-instance_method" title="#to_utc (instance method)">#<strong>to_utc</strong>(time_string, time_zone)  &#x21d2; DateTime </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Parse and convert Time to the given time zone.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#valid_date%3F-instance_method" title="#valid_date? (instance method)">#<strong>valid_date?</strong>(date)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks if date is valid.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="assume_utc-instance_method">
+  
+    #<strong>assume_utc</strong>(time)  &#x21d2; <tt>DateTime</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns time in UTC</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='comment'>#=&gt; 2013-12-19 14:01:22 +0200
+</span>
+<span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_assume_utc'>assume_utc</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2013-12-19 14:01:22 UTC</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DateTime</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>time in UTC</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assume_utc'>assume_utc</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_to_datetime'>to_datetime</span><span class='period'>.</span><span class='id identifier rubyid_change'>change</span><span class='lparen'>(</span><span class='label'>offset:</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="beginning_of_next_day-instance_method">
+  
+    #<strong>beginning_of_next_day</strong>(time)  &#x21d2; <tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns beginning of the next day</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='comment'>#=&gt; 2018-03-07 15:51:58 +0200
+</span><span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_next_day'>beginning_of_next_day</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2018-03-08 00:00:00 +0200</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>beginning of the next day</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_beginning_of_next_day'>beginning_of_next_day</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_day'>beginning_of_day</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span><span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="beginning_of_next_hour-instance_method">
+  
+    #<strong>beginning_of_next_hour</strong>(time)  &#x21d2; <tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns beginning of the next hour</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='comment'>#=&gt; 2018-03-07 15:51:58 +0200
+</span><span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_next_hour'>beginning_of_next_hour</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2018-03-07 16:00:00 +0200</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>beginning of the next hour</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_beginning_of_next_hour'>beginning_of_next_hour</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_hour'>beginning_of_hour</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span><span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_hour'>hour</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="beginning_of_next_month-instance_method">
+  
+    #<strong>beginning_of_next_month</strong>(time)  &#x21d2; <tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns beginning of the next month</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='comment'>#=&gt; 2018-03-07 15:51:58 +0200
+</span><span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_next_month'>beginning_of_next_month</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2018-04-01 00:00:00 +0300</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>beginning of the next month</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_beginning_of_next_month'>beginning_of_next_month</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_month'>beginning_of_month</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span><span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="diff_in_hours-instance_method">
+  
+    #<strong>diff_in_hours</strong>(end_time, start_time)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns difference in hours</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_end_time'>end_time</span>   <span class='comment'>#=&gt; 2018-03-07 14:51:58 +0200
+</span><span class='id identifier rubyid_start_time'>start_time</span> <span class='comment'>#=&gt; 2018-03-07 15:51:58 +0200
+</span>
+<span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_diff_in_hours'>diff_in_hours</span><span class='lparen'>(</span><span class='id identifier rubyid_end_time'>end_time</span><span class='comma'>,</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 1</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>end_time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>end time</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start_time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>start time</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>difference in hours</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_diff_in_hours'>diff_in_hours</span><span class='lparen'>(</span><span class='id identifier rubyid_end_time'>end_time</span><span class='comma'>,</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_end_time'>end_time</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>-</span> <span class='id identifier rubyid_start_time'>start_time</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='const'><span class='object_link'><a href="#SECONDS_IN_HOUR-constant" title="UsefulUtilities::Time::SECONDS_IN_HOUR (constant)">SECONDS_IN_HOUR</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_day_from-instance_method">
+  
+    #<strong>each_day_from</strong>(from, till = ::Time.now)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Yields local time of the beginning of each day between from &amp; till</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>from</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>till</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>::Time.now</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_each_day_from'>each_day_from</span><span class='lparen'>(</span><span class='id identifier rubyid_from'>from</span><span class='comma'>,</span> <span class='id identifier rubyid_till'>till</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>=</span> <span class='id identifier rubyid_from'>from</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_day'>beginning_of_day</span>
+  <span class='id identifier rubyid_end_time'>end_time</span> <span class='op'>=</span> <span class='id identifier rubyid_till'>till</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_day'>beginning_of_day</span>
+
+  <span class='kw'>while</span> <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_end_time'>end_time</span>
+    <span class='kw'>yield</span> <span class='id identifier rubyid_cursor'>cursor</span><span class='comma'>,</span> <span class='id identifier rubyid_next_day'>next_day</span> <span class='op'>=</span> <span class='id identifier rubyid_beginning_of_next_day'>beginning_of_next_day</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor'>cursor</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>=</span> <span class='id identifier rubyid_next_day'>next_day</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_hour_from-instance_method">
+  
+    #<strong>each_hour_from</strong>(from, till = ::Time.now)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Yields local time of the beginning of each hour between from &amp; till</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>from</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>till</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>::Time.now</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_each_hour_from'>each_hour_from</span><span class='lparen'>(</span><span class='id identifier rubyid_from'>from</span><span class='comma'>,</span> <span class='id identifier rubyid_till'>till</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>=</span> <span class='id identifier rubyid_from'>from</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_hour'>beginning_of_hour</span>
+  <span class='id identifier rubyid_end_time'>end_time</span> <span class='op'>=</span> <span class='id identifier rubyid_till'>till</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_hour'>beginning_of_hour</span>
+
+  <span class='kw'>while</span> <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_end_time'>end_time</span>
+    <span class='kw'>yield</span> <span class='id identifier rubyid_cursor'>cursor</span><span class='comma'>,</span> <span class='id identifier rubyid_next_hour'>next_hour</span> <span class='op'>=</span> <span class='id identifier rubyid_beginning_of_next_hour'>beginning_of_next_hour</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor'>cursor</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_cursor'>cursor</span> <span class='op'>=</span> <span class='id identifier rubyid_next_hour'>next_hour</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="round_to_hours-instance_method">
+  
+    #<strong>round_to_hours</strong>(time)  &#x21d2; <tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns time rounded to hours</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='comment'>#=&gt; 2014-01-04 14:29:59
+</span>
+<span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_round_to_hours'>round_to_hours</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2014-01-04 14:00:00</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>time rounded to hours</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_round_to_hours'>round_to_hours</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span> <span class='op'>&lt;</span> <span class='int'>30</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_hour'>beginning_of_hour</span> <span class='op'>:</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_end_of_hour'>end_of_hour</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_milliseconds-instance_method">
+  
+    #<strong>to_milliseconds</strong>(time)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns time in milliseconds</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='comment'>#=&gt; 2018-03-07 15:51:58 +0200
+</span><span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_milliseconds'>to_milliseconds</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 1520430718000</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>time in milliseconds</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 122</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_milliseconds'>to_milliseconds</span><span class='lparen'>(</span><span class='id identifier rubyid_time'>time</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_to_time'>to_time</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>*</span> <span class='const'><span class='object_link'><a href="#MILLISECONDS_IN_SECOND-constant" title="UsefulUtilities::Time::MILLISECONDS_IN_SECOND (constant)">MILLISECONDS_IN_SECOND</a></span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_utc-instance_method">
+  
+    #<strong>to_utc</strong>(time_string, time_zone)  &#x21d2; <tt>DateTime</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Parse and convert Time to the given time zone. If time zone is not given,
+Time is assumed to be given in UTC. Returns result in UTC</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_time_string'>time_string</span> <span class='comment'>#=&gt; &quot;2018-03-07 15:51:58 +0200&quot;
+</span><span class='id identifier rubyid_time_zone'>time_zone</span>   <span class='comment'>#=&gt; &quot;EET&quot;
+</span>
+<span class='const'><span class='object_link'><a href="../UsefulUtilities.html" title="UsefulUtilities (module)">UsefulUtilities</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UsefulUtilities::Time (module)">Time</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_utc'>to_utc</span><span class='lparen'>(</span><span class='id identifier rubyid_time_string'>time_string</span><span class='comma'>,</span> <span class='id identifier rubyid_time_zone'>time_zone</span><span class='rparen'>)</span> <span class='comment'>#=&gt; Wed, 07 Mar 2018 13:51:58 +0000</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>time_string</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>string to parse from</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>time_zone</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>timezone</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>DateTime</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>parsed time in UTC</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_utc'>to_utc</span><span class='lparen'>(</span><span class='id identifier rubyid_time_string'>time_string</span><span class='comma'>,</span> <span class='id identifier rubyid_time_zone'>time_zone</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_time'>time</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>DateTime</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_time_string'>time_string</span><span class='rparen'>)</span> <span class='comment'># Wed, 22 Aug 2012 13:34:18 +0000
+</span><span class='kw'>rescue</span>
+  <span class='kw'>nil</span>
+<span class='kw'>else</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_time_zone'>time_zone</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
+    <span class='id identifier rubyid_current_user_offset'>current_user_offset</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_in_time_zone'>in_time_zone</span><span class='lparen'>(</span><span class='op'>::</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_find_zone'>find_zone</span><span class='lparen'>(</span><span class='id identifier rubyid_time_zone'>time_zone</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_strftime'>strftime</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%z</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># &quot;+0300&quot;
+</span>    <span class='id identifier rubyid_time'>time</span> <span class='op'>=</span> <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_change'>change</span><span class='lparen'>(</span><span class='symbol'>:offset</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_current_user_offset'>current_user_offset</span><span class='rparen'>)</span> <span class='comment'># Wed, 22 Aug 2012 13:34:18 +0300
+</span>    <span class='id identifier rubyid_time'>time</span><span class='period'>.</span><span class='id identifier rubyid_utc'>utc</span> <span class='comment'># Wed, 22 Aug 2012 10:34:18 +0000
+</span>  <span class='kw'>else</span>
+    <span class='id identifier rubyid_time'>time</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="valid_date?-instance_method">
+  
+    #<strong>valid_date?</strong>(date)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns checks if date is valid</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>date</span>
+      
+      
+        <span class='type'>(<tt>Date</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>checks if date is valid</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useful_utilities/time.rb', line 140</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_valid_date?'>valid_date?</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>true</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_acts_like?'>acts_like?</span><span class='lparen'>(</span><span class='symbol'>:date</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>if</span> <span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+
+  <span class='comment'># http://stackoverflow.com/a/35502357/717336
+</span>  <span class='id identifier rubyid_date_hash'>date_hash</span> <span class='op'>=</span> <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid__parse'>_parse</span><span class='lparen'>(</span><span class='id identifier rubyid_date'>date</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='const'>Date</span><span class='period'>.</span><span class='id identifier rubyid_valid_date?'>valid_date?</span><span class='lparen'>(</span><span class='id identifier rubyid_date_hash'>date_hash</span><span class='lbracket'>[</span><span class='symbol'>:year</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span>
+                   <span class='id identifier rubyid_date_hash'>date_hash</span><span class='lbracket'>[</span><span class='symbol'>:mon</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span>
+                   <span class='id identifier rubyid_date_hash'>date_hash</span><span class='lbracket'>[</span><span class='symbol'>:mday</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Mar 12 10:43:41 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.12 (ruby-2.3.4).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -2,26 +2,44 @@ require_relative 'standard/binary'
 
 module UsefulUtilities
   module Size
+    # Possible units:
+    #   :B  - bytes
+    #   :KB - kilobytes
+    #   :MB - megabytes
+    #   :GB - gigabytes
+    #   :TB - terabytes
+    # Used ISO standard http://en.wikipedia.org/wiki/Binary_prefix
+    #   Binary
+    #   1 K = 1024
     module Byte
-      # @note: used ISO standard http://en.wikipedia.org/wiki/Binary_prefix
-      #   Binary
-      #   1 K = 1024
       include UsefulUtilities::Size::Standard::Binary
 
       HALF_OF_SECTOR = 0.5
 
+      # @param size [Numeric]
+      # @param unit [Symbol]
+      # @return [Numeric] size in terabytes
       def to_terabytes(size, unit)
         to_tebi(size, byte_prefix(unit))
       end
 
+      # @param size [Numeric]
+      # @param unit [Symbol]
+      # @return [Numeric] size in gigabytes
       def to_gigabytes(size, unit)
         to_gibi(size, byte_prefix(unit))
       end
 
+      # @param size [Numeric]
+      # @param unit [Symbol]
+      # @return [Numeric] size in megabytes
       def to_megabytes(size, unit)
         to_mebi(size, byte_prefix(unit))
       end
 
+      # @param size [Numeric]
+      # @param unit [Symbol]
+      # @return [Numeric] size in kilobytes
       def to_kilobytes(size, unit)
         if unit == :sector
           return (size * HALF_OF_SECTOR).round # http://en.wikipedia.org/wiki/Disk_sector
@@ -30,13 +48,17 @@ module UsefulUtilities
         to_kibi(size, byte_prefix(unit))
       end
 
+      # @param size [Numeric]
+      # @param unit [Symbol]
+      # @return [Numeric] size in bytes
       def to_bytes(size, unit)
         to_binary_bi(size, byte_prefix(unit))
       end
 
-      # Convert bytes to manually defined format
-      #   by using parameter 'unit'
-      #   ATTENTION: by default round is eq to 3 digits
+      # @param size [Numeric]
+      # @param unit [Symbol]
+      # @param rounder [Integer]
+      # @return [Numeric] humanized size in provided unit
       def bytes_to_human_size(size, unit, rounder = 3)
         case unit
         when :B  then size.round(rounder)

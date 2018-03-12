@@ -1,8 +1,8 @@
 module UsefulUtilities
   module Size
     module Standard
+      # Used SI standard http://en.wikipedia.org/wiki/Binary_prefix
       module Decimal
-        # @note: used SI standard http://en.wikipedia.org/wiki/Binary_prefix
 
         KILO = 1000      # KB
         MEGA = KILO ** 2 # MB
