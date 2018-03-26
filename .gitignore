@@ -3,6 +3,7 @@
 /coverage
 *.log
 /tmp/*
+/pkg
 *.sqlite3
 
 # System tmp files
