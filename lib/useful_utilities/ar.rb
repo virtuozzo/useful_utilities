@@ -173,8 +173,13 @@ module UsefulUtilities
       columns_with_aliases = columns.extract_options!
 
       sql_query =
-        columns.reduce(columns_with_aliases) { |res, column| res.merge!(column => column) }.
-                map { |column, column_alias| "SUM(#{ column }) AS #{ column_alias }" }.join(', ')
+        columns.reduce(columns_with_aliases) do |res, column|
+          res.merge!(column => column)
+        end.
+        map do |column, column_alias|
+          "COALESCE(SUM(#{ column }), 0) AS #{ column_alias }"
+        end.
+        join(', ')
 
       scope.select(sql_query).first
     end

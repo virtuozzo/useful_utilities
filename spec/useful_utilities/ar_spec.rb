@@ -106,7 +106,7 @@ describe UsefulUtilities::AR, type: :helper do
     context 'no records' do
       subject(:array_sum) { sum_by_columns(Count, %i(i)) }
 
-      its(:i) { is_expected.to be_nil }
+      its(:i) { is_expected.to be_zero }
     end
 
     context 'records exist' do
