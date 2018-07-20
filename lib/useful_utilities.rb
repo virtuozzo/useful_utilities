@@ -8,6 +8,7 @@ module UsefulUtilities
   require_relative 'useful_utilities/size'
   require_relative 'useful_utilities/api'
   require_relative 'useful_utilities/i18n'
+  require_relative 'useful_utilities/ip'
   require_relative 'useful_utilities/hash'
   require_relative 'useful_utilities/yaml'
   require_relative 'useful_utilities/redhat_release'
