@@ -22,6 +22,8 @@ And run `bundle install`. Gem is ready to use!
 
 `UsefulUtilities::Size` - size/frequency conversions
 
+`UsefulUtilities::IP` - some convenient methods to deal with IP Addresses
+
 See more in Documentation
 
 ## Documentation
