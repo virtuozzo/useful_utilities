@@ -8,7 +8,7 @@ module UsefulUtilities
 
     # @note Exceptions to handle
     # @see #port_open?
-    RESCUE_PORT_OPEN_EXCEPTIONS = [Errno::ENETUNREACH, Errno::ECONNREFUSED, Errno::EHOSTUNREACH, SocketError, Timeout::Error].freeze
+    RESCUE_PORT_OPEN_EXCEPTIONS = [Errno::ENETUNREACH, Errno::ECONNREFUSED, Errno::EHOSTUNREACH, Errno::ECONNRESET, SocketError, Timeout::Error].freeze
 
     # @param value [Numeric]
     # @return [FalseClass/Numeric] false if value is infinity or value if not
