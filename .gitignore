@@ -5,6 +5,7 @@
 /tmp/*
 /pkg
 *.sqlite3
+/Gemfile.lock
 
 # System tmp files
 .DS_Store

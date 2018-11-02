@@ -18,8 +18,9 @@ Gem::Specification.new do |s|
     A bunch of useful modules to work with time/size constants/hashes
   EOF
 
-  s.add_dependency 'activesupport'
+  s.add_dependency 'activerecord', '~> 4.2.6'
 
+  s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'timecop'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'factory_girl_rails'
