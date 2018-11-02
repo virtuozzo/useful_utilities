@@ -9,6 +9,22 @@ describe UsefulUtilities::AR, type: :helper do
     end
   end
 
+  describe '.value_to_boolean' do
+    delegate :value_to_boolean, to: :described_class
+
+    specify do
+      expect(value_to_boolean('true')).to be_truthy
+    end
+
+    specify do
+      expect(value_to_boolean(0)).to be_falsey
+    end
+
+    specify do
+      expect(value_to_boolean(nil)).to be_falsey
+    end
+  end
+
   describe '.boolean_to_float' do
     delegate :boolean_to_float, to: :described_class
 
