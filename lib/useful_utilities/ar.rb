@@ -31,7 +31,7 @@ module UsefulUtilities
       return 0 if value == false
       return 1 if value == true
 
-      ActiveRecord::Type::Integer.new.type_cast_from_database(value)
+      ActiveRecord::Type::Integer.new.cast(value)
     end
 
     # @param value
@@ -39,7 +39,7 @@ module UsefulUtilities
     def value_to_decimal(value)
       return BigDecimal.new(0) if value.nil?
 
-      ActiveRecord::Type::Decimal.new.type_cast_from_database(value)
+      ActiveRecord::Type::Decimal.new.cast(value)
     end
 
     # @param value
@@ -47,7 +47,7 @@ module UsefulUtilities
     def value_to_boolean(value)
       return false if value.nil?
 
-      ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
+      ActiveRecord::Type::Boolean.new.cast(value)
     end
 
     # @param value

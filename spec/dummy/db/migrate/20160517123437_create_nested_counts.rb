@@ -1,4 +1,4 @@
-class CreateNestedCounts < ActiveRecord::Migration
+class CreateNestedCounts < ActiveRecord::Migration[4.2]
   def change
     create_table :nested_counts do |t|
       t.integer :count_id, null: false

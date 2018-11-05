@@ -1,4 +1,4 @@
-class CreateCounts < ActiveRecord::Migration
+class CreateCounts < ActiveRecord::Migration[4.2]
   def change
     create_table :counts do |t|
       t.integer :i
