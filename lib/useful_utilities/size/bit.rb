@@ -66,10 +66,11 @@ module UsefulUtilities
 
       # @param value [Integer]
       # @return [Symbol] suitable unit
-      # @raise [ArgumentError] if value is not integer or less than zero
+      # @raise [ArgumentError] if value is less than zero
       def suitable_unit_for_bits(value)
-        return not_integer!(value)          unless value.is_a?(Integer)
-        return not_positive_integer!(value) unless value > -1
+        value = value.to_i
+
+        return not_positive!(value) if value.negative?
 
         if value.to_s.length    <= 3  then :bit
         elsif value.to_s.length <= 6  then :kbit
@@ -105,12 +106,8 @@ module UsefulUtilities
         raise ArgumentError.new("Unsupported unit - #{ unit }")
       end
 
-      def not_integer!(value)
-        raise ArgumentError.new("#{value } is not integer")
-      end
-
-      def not_positive_integer!(value)
-        raise ArgumentError.new("#{value } is not positive integer")
+      def not_positive!(value)
+        raise ArgumentError.new("#{value} is not positive")
       end
     end
   end

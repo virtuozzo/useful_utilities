@@ -10,5 +10,6 @@ module Dummy
     config.filter_parameters += [:password]
     config.active_support.escape_html_entities_in_json = true
     config.eager_load = false
+    config.active_record.sqlite3.represent_boolean_as_integer = true
   end
 end

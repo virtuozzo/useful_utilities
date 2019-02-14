@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.license = 'Apache 2.0'
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.md, LICENSE']
   s.required_ruby_version = '>= 2.2.2'
-  s.has_rdoc = 'yard'
 
   s.description = <<-EOF
     A bunch of useful modules to work with time/size constants/hashes
@@ -21,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'activesupport', ">= 5.0.1"
   s.add_dependency 'activerecord', ">= 5.0.1"
 
-  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'sqlite3', '~> 1.3.6'
   s.add_development_dependency 'timecop'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'factory_girl_rails'

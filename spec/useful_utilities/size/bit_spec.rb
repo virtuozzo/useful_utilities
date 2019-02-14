@@ -58,6 +58,7 @@ describe UsefulUtilities::Size::Bit do
 
   context 'suitable_unit_for_bits' do
     specify { expect(suitable_unit_for_bits(100)).to               eq :bit  }
+    specify { expect(suitable_unit_for_bits(100.123)).to           eq :bit  }
     specify { expect(suitable_unit_for_bits(1_000)).to             eq :kbit }
     specify { expect(suitable_unit_for_bits(100_000)).to           eq :kbit }
     specify { expect(suitable_unit_for_bits(1_000_000)).to         eq :Mbit }
@@ -66,7 +67,6 @@ describe UsefulUtilities::Size::Bit do
     specify { expect(suitable_unit_for_bits(100_000_000_000)).to   eq :Gbit }
     specify { expect(suitable_unit_for_bits(1_000_000_000_000)).to eq :Tbit }
     specify { expect { suitable_unit_for_bits(-1) }.to  raise_error(ArgumentError) }
-    specify { expect { suitable_unit_for_bits(1.0) }.to raise_error(ArgumentError) }
   end
 
   context 'bits_per_sec_to_human_readable' do
