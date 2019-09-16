@@ -123,6 +123,15 @@ module UsefulUtilities
       time.to_time.to_i * MILLISECONDS_IN_SECOND
     end
 
+    # @param timestamp [Integer] timestamp in milliseconds
+    # @return [Integer] timestamp in seconds
+    # @example
+    #   timestamp #=> 1568629976000
+    #   UsefulUtilities::Time.timestamp_to_seconds(timestamp) #=> 1568629976
+    def timestamp_to_seconds(timestamp)
+      timestamp / MILLISECONDS_IN_SECOND
+    end
+
     # @param end_time [Time] end time
     # @param start_time [Time] start time
     # @return [Integer] difference in hours
