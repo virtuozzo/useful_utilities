@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary = 'Helpful methods for time, sizes, hashes etc.'
   s.license = 'Apache 2.0'
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.md, LICENSE']
-  s.required_ruby_version = '>= 2.2.2'
+  s.required_ruby_version = '>= 2.3.4'
   s.has_rdoc = 'yard'
 
   s.description = <<-EOF
