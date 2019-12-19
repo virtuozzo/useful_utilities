@@ -9,10 +9,7 @@ module UsefulUtilities
     # @note Exceptions to handle
     # @see #port_open?
     RESCUE_PORT_OPEN_EXCEPTIONS = [
-      Errno::ENETUNREACH,
-      Errno::ECONNREFUSED,
-      Errno::EHOSTUNREACH,
-      Errno::ECONNRESET,
+      StandardError,
       SocketError,
       Timeout::Error].freeze
 
