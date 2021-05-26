@@ -80,7 +80,7 @@ module UsefulUtilities
         association_records.each do |nested_record|
           next unless nested_record.changed?
           nested_associations_validation(nested_record, :nested)
-          nested_record.errors.full_messages.each { |message| record.errors[error_key] << message }
+          nested_record.errors.full_messages.each { |message| record.errors.add(error_key, message) }
         end
       end
     end

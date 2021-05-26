@@ -6,10 +6,10 @@ require 'active_record'
 require 'useful_utilities'
 require 'rspec/rails'
 require 'pry'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 require 'rspec/its'
 
-FactoryGirl.definition_file_paths = %w(../spec/factories)
+FactoryBot.definition_file_paths = %w(../spec/factories)
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -20,7 +20,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   config.use_transactional_fixtures = true
   config.disable_monkey_patching!
