@@ -1,5 +1,5 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :count do
-    i 3
+    i { 3 }
   end
 end
