@@ -1,3 +1,3 @@
 module UsefulUtilities
-  VERSION = '6.6.1'.freeze
+  VERSION = '7.0.0'.freeze
 end
