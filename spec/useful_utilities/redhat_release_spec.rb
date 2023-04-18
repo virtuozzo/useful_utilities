@@ -11,6 +11,7 @@ describe UsefulUtilities::RedhatRelease do
   let(:rhel_6_8) { 'Red Hat Enterprise Linux Server release 6.8 (Santiago)' }
   let(:rhel_7_2) { 'Red Hat Enterprise Linux Server release 7.2 (Maipo)' }
   let(:vzlinux_9_0_1) { 'Virtuozzo Linux release 9.0.1 (Vz)' }
+  let(:vhs_7_9) { 'Virtuozzo Linux release 7.9' }
 
   describe '.legacy_distro' do
     let(:major_version) { 7 }
@@ -64,6 +65,12 @@ describe UsefulUtilities::RedhatRelease do
 
       it { is_expected.to eq(9) } 
     end
+
+    context 'for VHS 7.9' do
+      let(:release_string) { vhs_7_9 }
+
+      it { is_expected.to eq(7) } 
+    end
   end
 
   describe '#minor_version' do
@@ -110,6 +117,12 @@ describe UsefulUtilities::RedhatRelease do
 
       it { is_expected.to eq(0) } 
     end
+
+    context 'for VHS 7.9' do
+      let(:release_string) { vhs_7_9 }
+
+      it { is_expected.to eq(9) } 
+    end
   end
 
   describe '#patch_version' do
@@ -155,6 +168,12 @@ describe UsefulUtilities::RedhatRelease do
       let(:release_string) { vzlinux_9_0_1 }
 
       it { is_expected.to eq(1) } 
+    end
+
+    context 'for VHS 7.9' do
+      let(:release_string) { vhs_7_9 }
+
+      it { is_expected.to be_nil } 
     end
   end
 
@@ -213,6 +232,12 @@ describe UsefulUtilities::RedhatRelease do
       let(:release_string) { vzlinux_9_0_1 }
 
       it { is_expected.to eq('9.0.1') }
+    end
+
+    context 'for VHS 7.9' do
+      let(:release_string) { vhs_7_9 }
+
+      it { is_expected.to eq('7.9') } 
     end
   end
 end

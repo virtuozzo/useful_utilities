@@ -17,7 +17,7 @@ module UsefulUtilities
         #{VERSION_SEPARATOR_REGEXP}   # regexp for separator of version parts
         (?<patch>[[:digit:]]+)        # :patch named capture group; it matches one or more sequential digits
       )?                              # zero or one times quantifier(repetition metacharacter)
-      (?=[[:space:]])                 # positive lookahead assertion: ensures that the following character matches single "space" character, but doesn't include this character in the matched text
+      (?=[[:space:]])?                # positive lookahead assertion: ensures that the following character matches single "space" character, but doesn't include this character in the matched text
     }x.freeze
     private_constant :VERSION_REGEXP
 
