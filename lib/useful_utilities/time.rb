@@ -3,7 +3,7 @@ require 'active_support/all'
 module UsefulUtilities
   # Utilities for time
 
-  # @author OnApp Ltd.
+  # @author Virtuozzo
   module Time
     extend self
 
