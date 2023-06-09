@@ -5,9 +5,9 @@ require 'useful_utilities/version'
 Gem::Specification.new do |s|
   s.name = 'useful_utilities'
   s.version = UsefulUtilities::VERSION
-  s.authors = ['OnApp Ltd.']
-  s.email = 'onapp@onapp.com'
-  s.homepage = 'https://github.com/OnApp/useful_utilities'
+  s.authors = ['Virtuozzo']
+  s.email = 'igor.sidorov@virtuozzo.com'
+  s.homepage = 'https://github.com/virtuozzo/useful_utilities'
   s.summary = 'Helpful methods for time, sizes, hashes etc.'
   s.license = 'Apache 2.0'
   s.files = Dir['{app,config,db,lib}/**/*', 'Rakefile', 'README.md, LICENSE']
@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
     A bunch of useful modules to work with time/size constants/hashes
   EOF
 
-  s.add_dependency 'activesupport', ">= 6.1"
-  s.add_dependency 'activerecord', ">= 6.1"
+  s.add_dependency 'activesupport', '>= 6.1'
+  s.add_dependency 'activerecord', '>= 6.1'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'timecop'
